@@ -1,5 +1,7 @@
+const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+console.log(path.join(__dirname, '..', 'src/aa'));
 module.exports = {
     entry: './src/index.ts',
     output: {
@@ -15,6 +17,7 @@ module.exports = {
                 use: [{
                     loader: 'ts-loader'
                 }],
+                include: path.join(__dirname, '..', 'src', '/aa'),
                 exclude: /node_modules/
             }
         ]
